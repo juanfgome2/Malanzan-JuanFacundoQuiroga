@@ -6,7 +6,7 @@
   <title>Juan Facundo Quiroga</title>
   <link rel="shortcut icon" href="./images/muni23.png">
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="script/script.js">
+  
   
 
 </head>
@@ -397,59 +397,12 @@
       <input type="text" placeholder="Su mensaje" style="width: 100%; box-sizing: border-box; padding: 20px 12px; border-left: 3px solid hwb(0 49% 36%);" id="mensaje">
     </div>
     <center>
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 col-span-full sm:col-span-2 lg:col-span-3" type="submit">Enviar Comentario</button>
+      <button type="button" onclick="enviarComentario()">Enviar Comentario</button>
     </center>
   </form>
   
 
 
-<script>
-document.getElementById('comentarioForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const correo = document.getElementById('correo').value; // Agregado
-    const mensaje = document.getElementById('mensaje').value;
-
-    fetch('/comentarios', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nombre, correo, mensaje }) // Agregado
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error en la red: ' + response.statusText);
-        }
-        return response.text();
-    })
-    .then(data => {
-        alert(data);
-        cargarComentarios();
-    })
-    .catch(error => {
-        console.error('Hubo un problema con la solicitud:', error);
-        alert('Error al enviar el comentario. Inténtalo de nuevo más tarde.');
-    });
-});
-
-
-  function cargarComentarios() {
-      fetch('/comentarios')
-      .then(response => response.json())
-      .then(data => {
-          const listaComentarios = document.getElementById('comment-section');
-          listaComentarios.innerHTML = '';
-          data.forEach(comentario => {
-              const li = document.createElement('li');
-              li.textContent = `${comentario.nombre}: ${comentario.mensaje} (Publicado el ${new Date(comentario.fecha).toLocaleString()})`;
-              listaComentarios.appendChild(li);
-          });
-      });
-  }
-
-  cargarComentarios();
-</script>
 
 
 
@@ -492,6 +445,7 @@ document.getElementById('comentarioForm').addEventListener('submit', function(e)
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+  import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -510,7 +464,43 @@ document.getElementById('comentarioForm').addEventListener('submit', function(e)
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  window.enviarComentario = async function () {
+
+  const nombre = document.getElementById("nombre").value;
+const correo = document.getElementById("correo").value;
+const mensaje = document.getElementById("mensaje").value;
+
+if (!nombre || !correo || !mensaje) {
+  alert("Completa todos los campos");
+  return;
+}
+
+  try {
+   await addDoc(collection(db, "comentarios"), {
+  nombre: nombre,
+  correo: correo,
+  comentario: mensaje,
+  fecha: new Date()
+});
+
+    alert("Comentario enviado");
+
+    document.getElementById("nombre").value = "";
+document.getElementById("mensaje").value = "";
+document.getElementById("correo").value = "";
+
+  } catch (e) {
+    console.error("Error agregando comentario: ", e);
+  }
+}
 </script>
-</body>
+<h3>Comentarios</h3>
+<div id="listaComentarios"></div>
+
 </div>
+
+</body>
+
 </html>
