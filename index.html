@@ -386,7 +386,10 @@
     
   <!-- Aquí se mostrarán los comentarios -->
   <h2 class="formulario" style="text-align: center; font-family: sans-serif; text-shadow: 0 0 12px hwb(0 17% 78%)">Deja tu comentario...</h2>
+  
+  <div id="listaComentarios"></div>
   <form id="comentarioForm" style="background-color: #ededed91">
+
     <div class="form_imput" style="padding: 10px 20px;">
       <input type="text" placeholder="Nombre Completo" style="width: 100%; box-sizing: border-box; padding: 6px 12px; border-left: 1px solid hwb(0 62% 18%);" id="nombre">
     </div>
@@ -445,7 +448,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -465,6 +468,32 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
+
+  async function cargarComentarios() {
+
+  const querySnapshot = await getDocs(collection(db, "comentarios"));
+
+  const lista = document.getElementById("listaComentarios");
+
+  lista.innerHTML = "";
+
+  querySnapshot.forEach((doc) => {
+
+    const data = doc.data();
+
+    const comentarioHTML = `
+      <div style="background:#ffffff;padding:10px;margin:10px;border-radius:8px;">
+        <strong>${data.nombre}</strong><br>
+        <small>${data.correo}</small>
+        <p>${data.comentario}</p>
+      </div>
+    `;
+
+    lista.innerHTML += comentarioHTML;
+
+  });
+
+}
 
   window.enviarComentario = async function () {
 
@@ -486,8 +515,11 @@ if (!nombre || !correo || !mensaje) {
 });
 
     alert("Comentario enviado");
+    
 
-    document.getElementById("nombre").value = "";
+cargarComentarios();
+
+document.getElementById("nombre").value = "";
 document.getElementById("mensaje").value = "";
 document.getElementById("correo").value = "";
 
@@ -495,9 +527,17 @@ document.getElementById("correo").value = "";
     console.error("Error agregando comentario: ", e);
   }
 }
+
+;
+
+cargarComentarios();
+
+
+
 </script>
-<h3>Comentarios</h3>
-<div id="listaComentarios"></div>
+
+
+
 
 </div>
 
