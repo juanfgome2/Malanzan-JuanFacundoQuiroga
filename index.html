@@ -10,6 +10,7 @@
   
 
 </head>
+
       <body class="body1" >
       <div class="opaco">   
         <div class="flex flex-col min-h-screen">
@@ -487,6 +488,29 @@ document.getElementById('comentarioForm').addEventListener('submit', function(e)
   </footer>
   <script src="script/script.js"></script>
 </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDT6EcfqiX-5ED1KSWozrELqrIzZzxupiA",
+    authDomain: "web-departamento.firebaseapp.com",
+    projectId: "web-departamento",
+    storageBucket: "web-departamento.firebasestorage.app",
+    messagingSenderId: "1093939877381",
+    appId: "1:1093939877381:web:0e7415c8583fdde8ca2e6c",
+    measurementId: "G-CQXR7STYMF"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </div>
 </html>
