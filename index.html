@@ -402,8 +402,8 @@
     <center>
       <button type="button" onclick="enviarComentario()">Enviar Comentario</button>
     </center>
-  </form>
-  <form id="comentarioForm" style="background-color: #ededed91"></form>
+  
+  
   <div id="listaComentarios"></div>
   
 
@@ -487,7 +487,9 @@
       <div style="background:#ffffff;padding:10px;margin:10px;border-radius:8px;">
         <strong>${data.nombre}</strong><br>
         <small>${data.correo}</small>
-        <p>${data.comentario}</p>
+<br>
+<small>${new Date(data.fecha.seconds * 1000).toLocaleString()}</small>
+        <p>${data.comentario || data.mensaje}</p>
       </div>
     `;
 
