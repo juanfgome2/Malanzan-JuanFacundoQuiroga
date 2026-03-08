@@ -33,7 +33,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#" style="color: black; filter: drop-shadow(0 0 12px hwb(0 17% 78%));text-shadow: 0 0 12px hwb(0 49% 36%)s">Atractivo</a>
+                    <a href="#" style="color: black; filter: drop-shadow(0 0 12px hwb(0 17% 78%));text-shadow: 0 0 12px hwb(0 49% 36%)">Atractivo</a>
                     <div class="dropdown-content2">
                       <a class="ponzio" href="pages/naturaleza.html">-Naturaleza</a>
                       <a class="ponzio"  href="pages/cultura.html">-Cultura</a>
@@ -427,7 +427,7 @@
     <div class="footer-icons">
       <div class="icon-container">
         <a href="https://www.facebook.com/people/Direcci%C3%B3n-de-Turismo-y-Cultura-JFQuiroga/61559500354483/" style="text-decoration: none;">
-        <img src=".//icon/facebook.png" alt="Clock Icon" class="icon">
+        <img src="./icon/facebook.png" alt="Clock Icon" class="icon">
         <p class="icon-title" style="color: rgb(255, 255, 255); filter: drop-shadow(0 0 12px hwb(0 17% 78%));text-shadow: 0 0 12px hwb(0 49% 36%)">Facebook</p>
       </a>
       </div>
@@ -437,7 +437,7 @@
         </a>
       </div>
       <div class="icon-container">
-        <a href="https://www.instagram.com/juanfacundoquirogaturismoycult?igsh=MW5xZG0zbzd6enQ0MQ==" style="text-decoration: none;"> <img src="../JFQ/icon/instagram.png" alt="Email Icon" class="icon"> 
+        <a href="https://www.instagram.com/juanfacundoquirogaturismoycult?igsh=MW5xZG0zbzd6enQ0MQ==" style="text-decoration: none;"> <img src="./icon/instagram.png" alt="Email Icon" class="icon"> 
           <p class="icon-title" style="color: rgb(255, 252, 252); filter: drop-shadow(0 0 12px hwb(0 17% 78%));text-shadow: 0 0 12px hwb(0 49% 36%)">Instagram</p>
         </a>
       </div>
@@ -456,12 +456,14 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, updateDoc, doc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+  
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
   const firebaseConfig = {
     apiKey: "AIzaSyDT6EcfqiX-5ED1KSWozrELqrIzZzxupiA",
     authDomain: "web-departamento.firebaseapp.com",
@@ -494,9 +496,13 @@
 
 <strong>${data.nombre}</strong><br>
 <small>${data.correo}</small><br>
-<small>${new Date(data.fecha.seconds * 1000).toLocaleString()}</small>
+<small>${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}</small>
 
 <p>${data.comentario || data.mensaje}</p>
+
+<button onclick="darLike('${doc.id}', ${data.likes || 0})">
+❤️ ${data.likes || 0}
+</button>
 
 <button style="font-size:12px;opacity:0.5"
 onclick="eliminarComentario('${doc.id}')">
@@ -529,7 +535,8 @@ if (!nombre || !correo || !mensaje) {
   nombre: nombre,
   correo: correo,
   comentario: mensaje,
-  fecha: new Date()
+  fecha: new Date(),
+  likes: 0
 });
 
     alert("Comentario enviado");
@@ -583,7 +590,19 @@ window.eliminarComentario = async function(id) {
 
 }
 
+window.darLike = async function(id, likesActuales){
 
+const ref = doc(db, "comentarios", id);
+
+await updateDoc(ref, {
+
+likes: likesActuales + 1
+
+});
+
+cargarComentarios();
+
+}
 
 </script>
 
