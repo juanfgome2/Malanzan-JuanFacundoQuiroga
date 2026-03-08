@@ -484,14 +484,21 @@
     const data = doc.data();
 
     const comentarioHTML = `
-      <div style="background:#ffffff;padding:10px;margin:10px;border-radius:8px;">
-        <strong>${data.nombre}</strong><br>
-        <small>${data.correo}</small>
-<br>
-<small>${new Date(data.fecha.seconds * 1000).toLocaleString()}</small>
-        <p>${data.comentario || data.mensaje}</p>
-      </div>
-    `;
+  <div style="background:#ffffff;padding:15px;margin:10px;border-radius:10px;display:flex;gap:10px;align-items:flex-start;">
+    
+    <img src="https://ui-avatars.com/api/?name=${data.nombre}&background=random&color=fff&size=40" 
+    style="border-radius:50%; width:40px; height:40px;">
+
+    <div>
+      <strong>${data.nombre}</strong><br>
+      <small>${data.correo}</small><br>
+      <small>${new Date(data.fecha.seconds * 1000).toLocaleString()}</small>
+
+      <p>${data.comentario || data.mensaje}</p>
+    </div>
+
+  </div>
+`;
 
     lista.innerHTML += comentarioHTML;
 
