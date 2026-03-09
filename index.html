@@ -492,35 +492,42 @@
   querySnapshot.forEach((doc) => {
 
     const data = doc.data();
+    const avatar = `https://ui-avatars.com/api/?name=${data.nombre}&background=0D8ABC&color=fff`;
 
-    const comentarioHTML = `
-<div style="background:#ffffff;padding:15px;margin:10px;border-radius:8px;">
+   const comentarioHTML = `
+<div style="background:white;padding:15px;margin:15px;border-radius:12px;display:flex;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
 
-<strong>${data.nombre}</strong><br>
-<small>${data.correo}</small><br>
-<small>${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}</small>
+<img src="${avatar}" style="width:45px;height:45px;border-radius:50%;">
 
-<p  style="color:black;" >${data.comentario || data.mensaje}</p>
+<div style="flex:1;">
+
+<strong style="color:#222;">${data.nombre}</strong><br>
+
+<small style="color:gray;">
+${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}
+</small>
+
+<p style="color:black;margin-top:8px;">
+${data.comentario || data.mensaje}
+</p>
+
 ${data.respuesta ? `
-<div style="background:#f1f1f1;padding:10px;margin-top:10px;border-left:4px solid #007bff;">
-<b>Administrador:</b> ${data.respuesta}
+<div style="background:#f1f1f1;padding:10px;margin-top:10px;border-radius:6px;">
+<b style="color:#007bff;">Administrador</b> ${data.respuesta}
 </div>
 ` : ""}
 
-<button onclick="darLike('${doc.id}', ${data.likes || 0})">
+<button onclick="darLike('${doc.id}', ${data.likes || 0})"
+style="border:none;background:#f1f1f1;padding:6px 12px;border-radius:20px;cursor:pointer;">
 ❤️ ${data.likes || 0}
 </button>
 
 ${modoAdmin ? `
-<button onclick="eliminarComentario('${doc.id}')">
-🗑 Eliminar
-</button>
- <button onclick="responderComentario('${doc.id}')">
-Responder
-</button> 
+<button onclick="eliminarComentario('${doc.id}')">🗑</button>
+<button onclick="responderComentario('${doc.id}')">Responder</button>
 ` : ""}
 
-
+</div>
 </div>
 `;
     
