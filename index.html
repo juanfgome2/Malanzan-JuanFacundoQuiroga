@@ -501,6 +501,11 @@
 <small>${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}</small>
 
 <p>${data.comentario || data.mensaje}</p>
+${data.respuesta ? `
+<div style="background:#f1f1f1;padding:10px;margin-top:10px;border-left:4px solid #007bff;">
+<b>Administrador:</b> ${data.respuesta}
+</div>
+` : ""}
 
 <button onclick="darLike('${doc.id}', ${data.likes || 0})">
 ❤️ ${data.likes || 0}
@@ -510,7 +515,11 @@ ${modoAdmin ? `
 <button onclick="eliminarComentario('${doc.id}')">
 🗑 Eliminar
 </button>
+ <button onclick="responderComentario('${doc.id}')">
+Responder
+</button> 
 ` : ""}
+
 
 </div>
 `;
@@ -624,6 +633,22 @@ cargarComentarios();
 alert("Clave incorrecta");
 
 }
+
+}
+
+window.responderComentario = async function(id){
+
+const respuesta = prompt("Escribe la respuesta:");
+
+if(!respuesta) return;
+
+const ref = doc(db, "comentarios", id);
+
+await updateDoc(ref, {
+respuesta: respuesta
+});
+
+cargarComentarios();
 
 }
 
