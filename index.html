@@ -500,7 +500,7 @@
 <small>${data.correo}</small><br>
 <small>${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}</small>
 
-<p>${data.comentario || data.mensaje}</p>
+<p  style="color:black;" >${data.comentario || data.mensaje}</p>
 ${data.respuesta ? `
 <div style="background:#f1f1f1;padding:10px;margin-top:10px;border-left:4px solid #007bff;">
 <b>Administrador:</b> ${data.respuesta}
