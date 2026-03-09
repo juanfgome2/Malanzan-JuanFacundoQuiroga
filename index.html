@@ -479,6 +479,8 @@
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
 
+  let modoAdmin = false;
+
   async function cargarComentarios() {
 
   const querySnapshot = await getDocs(collection(db, "comentarios"));
@@ -504,10 +506,11 @@
 ❤️ ${data.likes || 0}
 </button>
 
-<button style="font-size:12px;opacity:0.5"
-onclick="eliminarComentario('${doc.id}')">
-Eliminar
+${modoAdmin ? `
+<button onclick="eliminarComentario('${doc.id}')">
+🗑 Eliminar
 </button>
+` : ""}
 
 </div>
 `;
@@ -604,11 +607,34 @@ cargarComentarios();
 
 }
 
+window.activarAdmin = function(){
+
+const clave = prompt("Ingrese clave de administrador");
+
+if(clave === "admin123"){
+
+modoAdmin = true;
+
+alert("Modo administrador activado");
+
+cargarComentarios();
+
+}else{
+
+alert("Clave incorrecta");
+
+}
+
+}
+
 </script>
 
 
 
 
+</div>
+<div onclick="activarAdmin()" 
+style="position:fixed;bottom:5px;right:5px;width:15px;height:15px;cursor:pointer;">
 </div>
 
 </body>
