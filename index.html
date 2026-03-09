@@ -482,19 +482,45 @@
   let modoAdmin = false;
 
   async function cargarComentarios() {
-
-  const querySnapshot = await getDocs(
-  query(collection(db, "comentarios"), orderBy("fecha", "desc"))
+    const querySnapshot = await getDocs(
+query(collection(db, "comentarios"), orderBy("fecha", "desc"))
 );
 
-  const lista = document.getElementById("listaComentarios");
+const lista = document.getElementById("listaComentarios");
 
-  lista.innerHTML = "";
+lista.innerHTML = "";
 
-  querySnapshot.forEach((doc) => {
+const comentarios = [];
+const respuestas = [];
 
-    const data = doc.data();
-    const avatar = `https://ui-avatars.com/api/?name=${data.nombre}&background=0D8ABC&color=fff`;
+querySnapshot.forEach((docSnap) => {
+
+const data = docSnap.data();
+
+if(data.respuestaA){
+respuestas.push({id: docSnap.id, ...data});
+}else{
+comentarios.push({id: docSnap.id, ...data});
+}
+
+});
+
+ 
+
+  
+
+  
+
+  
+
+
+
+
+
+  comentarios.forEach((data) => {
+
+    
+    const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(data.nombre)}&background=0D8ABC&color=fff`;
 
   const comentarioHTML = `
 <div class="comentario-box">
@@ -517,13 +543,13 @@ ${data.comentario || data.mensaje}
 
 <div class="comentario-acciones">
 
-<button onclick="darLike('${doc.id}', ${data.likes || 0})">
+<button onclick="darLike('${data.id}', ${data.likes || 0})">
 ❤️ ${data.likes || 0}
 </button>
 
 ${modoAdmin ? `
-<button onclick="eliminarComentario('${doc.id}')">🗑</button>
-<button onclick="responderComentario('${doc.id}')">Responder</button>
+<button onclick="eliminarComentario('${data.id}')">🗑</button>
+<button onclick="responderComentario('${data.id}')">Responder</button>
 ` : ""}
 
 </div>
@@ -539,7 +565,33 @@ ${data.respuesta ? `
 `;
     
 
-    lista.innerHTML += comentarioHTML;
+    let bloqueComentario = comentarioHTML;
+
+respuestas.forEach((resp)=>{
+
+if(resp.respuestaA === data.id){
+
+const avatarResp = `https://ui-avatars.com/api/?name=${encodeURIComponent(resp.nombre)}&background=444&color=fff`;
+
+bloqueComentario += `
+
+<div style="margin-left:60px;background:#f5f5f5;padding:12px;border-radius:10px;margin-top:5px;display:flex;gap:10px;">
+
+<img src="${avatarResp}" style="width:35px;height:35px;border-radius:50%;">
+
+<div>
+<strong>${resp.nombre}</strong>
+<p style="margin:4px 0;color:black;">${resp.comentario}</p>
+</div>
+
+</div>
+`;
+
+}
+
+
+});
+lista.innerHTML += bloqueComentario;
 
   });
 
@@ -656,10 +708,12 @@ const respuesta = prompt("Escribe la respuesta:");
 
 if(!respuesta) return;
 
-const ref = doc(db, "comentarios", id);
-
-await updateDoc(ref, {
-respuesta: respuesta
+await addDoc(collection(db, "comentarios"), {
+nombre: "Administrador",
+comentario: respuesta,
+fecha: new Date(),
+likes: 0,
+respuestaA: id
 });
 
 cargarComentarios();

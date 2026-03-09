@@ -2475,3 +2475,44 @@ border-left:4px solid #0077ff;
 border-radius:6px;
 font-size:14px;
 }
+.comentario-box{
+display:flex;
+gap:12px;
+background:white;
+padding:15px;
+border-radius:12px;
+margin-top:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.comentario-avatar{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+.comentario-header{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+margin-bottom:5px;
+}
+
+.comentario-texto{
+color:#333;
+margin:5px 0;
+}
+
+.comentario-acciones button{
+background:none;
+border:none;
+cursor:pointer;
+font-size:14px;
+}
+
+.admin-respuesta{
+background:#f2f2f2;
+padding:10px;
+border-radius:8px;
+margin-top:8px;
+}
