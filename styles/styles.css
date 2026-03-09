@@ -2411,3 +2411,67 @@ transition:0.3s;
 .admin-btn:hover{
 opacity:0.6;
 }
+
+.comentario-box{
+display:flex;
+gap:12px;
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.comentario-box:hover{
+transform:scale(1.01);
+}
+
+.comentario-avatar{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+.comentario-contenido{
+flex:1;
+}
+
+.comentario-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.comentario-fecha{
+font-size:12px;
+color:gray;
+}
+
+.comentario-texto{
+color:black;
+margin-top:6px;
+}
+
+.comentario-acciones button{
+margin-top:8px;
+margin-right:5px;
+border:none;
+background:#f1f1f1;
+padding:5px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.comentario-acciones button:hover{
+background:#ddd;
+}
+
+.admin-respuesta{
+background:#f5f5f5;
+margin-top:10px;
+padding:8px;
+border-left:4px solid #0077ff;
+border-radius:6px;
+font-size:14px;
+}

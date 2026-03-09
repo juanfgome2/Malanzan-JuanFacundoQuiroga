@@ -494,37 +494,42 @@
     const data = doc.data();
     const avatar = `https://ui-avatars.com/api/?name=${data.nombre}&background=0D8ABC&color=fff`;
 
-   const comentarioHTML = `
-<div style="background:white;padding:15px;margin:15px;border-radius:12px;display:flex;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+  const comentarioHTML = `
+<div class="comentario-box">
 
-<img src="${avatar}" style="width:45px;height:45px;border-radius:50%;">
+<img src="${avatar}" class="comentario-avatar">
 
-<div style="flex:1;">
+<div class="comentario-contenido">
 
-<strong style="color:#222;">${data.nombre}</strong><br>
+<div class="comentario-header">
+<strong>${data.nombre}</strong>
 
-<small style="color:gray;">
+<span class="comentario-fecha">
 ${data.fecha ? new Date(data.fecha.seconds * 1000).toLocaleString() : ""}
-</small>
+</span>
+</div>
 
-<p style="color:black;margin-top:8px;">
+<p class="comentario-texto">
 ${data.comentario || data.mensaje}
 </p>
 
-${data.respuesta ? `
-<div style="background:#f1f1f1;padding:10px;margin-top:10px;border-radius:6px;">
-<b style="color:#007bff;">Administrador</b> ${data.respuesta}
-</div>
-` : ""}
+<div class="comentario-acciones">
 
-<button onclick="darLike('${doc.id}', ${data.likes || 0})"
-style="border:none;background:#f1f1f1;padding:6px 12px;border-radius:20px;cursor:pointer;">
+<button onclick="darLike('${doc.id}', ${data.likes || 0})">
 ❤️ ${data.likes || 0}
 </button>
 
 ${modoAdmin ? `
 <button onclick="eliminarComentario('${doc.id}')">🗑</button>
 <button onclick="responderComentario('${doc.id}')">Responder</button>
+` : ""}
+
+</div>
+
+${data.respuesta ? `
+<div class="admin-respuesta">
+<b>Administrador:</b> ${data.respuesta}
+</div>
 ` : ""}
 
 </div>
