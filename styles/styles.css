@@ -2542,9 +2542,25 @@ margin-top:8px;
 
 }
 .temporadas2{
-  text-shadow: 0 0 12px hwb(0 17% 78%);
-  height: 100px; 
-  background-color: hwb(39 6% 7% / 0.315);
+text-shadow:0 0 12px hwb(0 17% 78%);
+min-height:100px;
+background-color:hwb(39 6% 7% / 0.315);
+transition:0.4s;
+padding:15px;
+}
+
+.temporadas2:hover{
+background-color:hwb(39 6% 7%);
+color:white;
+}
+
+.temporadas2 p{
+opacity:0;
+transition:0.4s;
+}
+
+.temporadas2:hover p{
+opacity:1;
 }
 .temporadas3{
   text-shadow: 0 0 12px hwb(0 17% 78%);
