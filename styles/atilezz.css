@@ -1,35 +1,109 @@
-/* Estilos para el contenedor principal */
-.container {
-    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
- /* Centra el contenedor en la página */
-  }
-  
-  /* Estilos para el título */
-  h1 {
-    font-size: 2.5rem; /* Tamaño de fuente grande para el título */
-    font-weight: bold; /* Fuente en negrita */
-    line-height: 1.2; /* Espacio entre líneas */
-    margin-bottom: 10px; /* Espacio inferior */
-  }
-  
-  /* Estilos para el párrafo */
-  p {
-    font-size: 1.1rem; /* Tamaño de fuente */
-    line-height: 1.6; /* Espacio entre líneas */
-    margin-bottom: 20px; /* Espacio inferior */
-  }
-  
-  /* Estilos para la fecha */
-  .text-gray-500 {
-    color: #888; /* Color de texto gris */
-  }
-  
-  /* Estilos para la imagen */
-  img {
-    display: flex; /* Hace que la imagen sea un bloque */
-    float: left;
-    max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
-    border-radius: 10px; /* Borde redondeado */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que esté fuera del contenedor */
-  }
+/* CONTENEDOR PRINCIPAL */
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+/* TITULOS */
+h1{
+font-size:2.5rem;
+font-weight:bold;
+line-height:1.2;
+margin-bottom:10px;
+}
+
+/* PARRAFOS */
+p{
+font-size:1.1rem;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* TEXTO GRIS */
+.text-gray-500{
+color:#888;
+}
+
+/* IMAGENES GENERALES */
+img{
+display:block;
+max-width:100%;
+height:auto;
+border-radius:10px;
+}
+
+
+
+/* IMAGENES DEL CARRUSEL */
+.carousel-slide{
+display:flex;
+gap:10px;
+transition: transform 0.5s ease;
+}
+
+.carousel-slide img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:10px;
+display:block;
+}
+
+.image-wrapper{
+min-width:100%;
+}
+
+.image-wrapper img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+.carousel-slide img{
+height:250px;
+}
+}
+
+/* BOTONES */
+.prev, .next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.4);
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+border-radius:50%;
+z-index:10;
+}
+
+.prev{
+left:10px;
+}
+
+.next{
+right:10px;
+}
+
+.prev:hover,
+.next:hover{
+background:rgba(0,0,0,0.7);
+}
+.carousel-container{
+position:relative;
+overflow:hidden;
+width:100%;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.carousel-container img{
+transition: transform 0.4s;
+}
+
+.carousel-container img:hover{
+transform: scale(1.05);
+}
