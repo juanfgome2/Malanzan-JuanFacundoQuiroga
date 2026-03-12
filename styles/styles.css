@@ -1924,6 +1924,9 @@ button[type="submit"] {
   font-weight: 100px;
   font-size: 22px;
   padding: 10px;
+   font-family: sans-serif; 
+   text-shadow: 0 0 12px hwb(0 17% 78%);
+   color:#09ff00;
 }
 .formulariomapa {
   text-align: center;
@@ -2521,4 +2524,7 @@ background:#f2f2f2;
 padding:10px;
 border-radius:8px;
 margin-top:8px;
+}
+.visitas{
+  color: #0011f8;
 }
