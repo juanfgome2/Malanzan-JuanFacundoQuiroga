@@ -51,12 +51,12 @@
     display: inline-block;
     padding: 5px;
   }
-  .body{
+  .body1{
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
-     /* background-image: url(../images/madera3.jpeg);*/
+    background-image: url(../images/madera3.jpeg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
