@@ -2537,9 +2537,22 @@ margin-top:8px;
 }
 .temporadas1{
   text-shadow: 0 0 12px hwb(0 17% 78%);
-  height: 100px;
+  min-height:100px;
    background-color: hwb(0 88% 9% / 0.326);
+  transition:0.4s;
+padding:15px;
+}
+.temporadas1:hover{
+background-color:hwb(60 24% 75%);
+color:white;
+}
+.temporadas1 p{
+opacity:0;
+transition:0.4s;
+}
 
+.temporadas1:hover p{
+opacity:1;
 }
 .temporadas2{
 text-shadow:0 0 12px hwb(0 17% 78%);
@@ -2564,11 +2577,39 @@ opacity:1;
 }
 .temporadas3{
   text-shadow: 0 0 12px hwb(0 17% 78%);
-  height: 100px; 
+  min-height:100px;
   background-color: hwb(108 5% 23% / 0.326);
+  transition:0.4s;
+padding:15px;
+}
+.temporadas3:hover{
+background-color:hwb(119 1% 81%);
+color:white;
+}
+.temporadas3 p{
+opacity:0;
+transition:0.4s;
+}
+
+.temporadas3:hover p{
+opacity:1;
 }
 .temporadas4{
   text-shadow: 8 0 12px hwb(0 17% 78%);
-  height: 100px;
+  min-height:100px;
    background-color: hwb(66 4% 7% / 0.326);
+   transition:0.4s;
+padding:15px;
+}
+.temporadas4:hover{
+background-color:hwb(86 9% 52%);
+color:white;
+}
+.temporadas4 p{
+opacity:0;
+transition:0.4s;
+}
+
+.temporadas4:hover p{
+opacity:1;
 }
