@@ -2614,3 +2614,42 @@ transition:0.4s;
 .temporadas4:hover p{
 opacity:1;
 }
+
+/* CELULAR */
+@media (max-width:768px){
+
+.temporadas1,
+.temporadas2,
+.temporadas3,
+.temporadas4{
+min-height:auto;
+padding:20px;
+}
+
+/* el texto se ve siempre en celular */
+.temporadas1 p,
+.temporadas2 p,
+.temporadas3 p,
+.temporadas4 p{
+opacity:1;
+}
+
+/* desactivar hover en celular */
+.temporadas1:hover,
+.temporadas2:hover,
+.temporadas3:hover,
+.temporadas4:hover{
+background-color:inherit;
+color:inherit;
+}
+
+}
+@media (max-width:768px){
+.temporadas1,
+.temporadas2,
+.temporadas3,
+.temporadas4{
+border-radius:12px;
+margin-bottom:15px;
+}
+}
