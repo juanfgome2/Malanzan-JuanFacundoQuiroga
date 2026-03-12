@@ -2536,120 +2536,84 @@ margin-top:8px;
   color:#09ff00;
   background-color: #243763;
 }
-.temporadas1{
-  text-shadow: 0 0 12px hwb(0 17% 78%);
-  min-height:100px;
-   background-color: hwb(0 88% 9% / 0.326);
-  transition:0.4s;
+/* TARJETAS DE TEMPORADAS */
+
+.temporada{
+text-shadow:0 0 12px hwb(0 17% 78%);
+min-height:100px;
+transition:0.4s;
 padding:15px;
+border-radius:12px;
+margin-bottom:15px;
 }
-.temporadas1:hover{
+
+/* COLORES DE CADA TEMPORADA */
+
+.temp1{
+background-color:hwb(0 88% 9% / 0.326);
+}
+
+.temp1:hover{
 background-color:hwb(60 24% 75%);
 color:white;
 }
-.temporadas1 p{
-opacity:0;
-transition:0.4s;
-}
 
-.temporadas1:hover p{
-opacity:1;
-}
-.temporadas2{
-text-shadow:0 0 12px hwb(0 17% 78%);
-min-height:100px;
+.temp2{
 background-color:hwb(39 6% 7% / 0.315);
-transition:0.4s;
-padding:15px;
 }
 
-.temporadas2:hover{
+.temp2:hover{
 background-color:hwb(39 6% 7%);
 color:white;
 }
 
-.temporadas2 p{
-opacity:0;
-transition:0.4s;
+.temp3{
+background-color:hwb(108 5% 23% / 0.326);
 }
 
-.temporadas2:hover p{
-opacity:1;
-}
-.temporadas3{
-  text-shadow: 0 0 12px hwb(0 17% 78%);
-  min-height:100px;
-  background-color: hwb(108 5% 23% / 0.326);
-  transition:0.4s;
-padding:15px;
-}
-.temporadas3:hover{
+.temp3:hover{
 background-color:hwb(119 1% 81%);
 color:white;
 }
-.temporadas3 p{
-opacity:0;
-transition:0.4s;
+
+.temp4{
+background-color:hwb(66 4% 7% / 0.326);
 }
 
-.temporadas3:hover p{
-opacity:1;
-}
-.temporadas4{
-  text-shadow: 8 0 12px hwb(0 17% 78%);
-  min-height:100px;
-   background-color: hwb(66 4% 7% / 0.326);
-   transition:0.4s;
-padding:15px;
-}
-.temporadas4:hover{
+.temp4:hover{
 background-color:hwb(64 3% 7%);
 color:white;
 }
-.temporadas4 p{
+
+/* TEXTO OCULTO */
+
+.temporada p{
 opacity:0;
 transition:0.4s;
 }
 
-.temporadas4:hover p{
+.temporada:hover p{
 opacity:1;
 }
 
-/* CELULAR */
+/* 📱 CELULAR */
+
 @media (max-width:768px){
 
-.temporadas1,
-.temporadas2,
-.temporadas3,
-.temporadas4{
+.temporada{
 min-height:auto;
-padding:20px;
+padding:15px;
 }
 
-/* el texto se ve siempre en celular */
-.temporadas1 p,
-.temporadas2 p,
-.temporadas3 p,
-.temporadas4 p{
+.temporada p{
 opacity:1;
+font-size:14px;
+line-height:1.4;
 }
 
-/* desactivar hover en celular */
-.temporadas1:hover,
-.temporadas2:hover,
-.temporadas3:hover,
-.temporadas4:hover{
+.temporada:hover{
 background-color:inherit;
 color:inherit;
 }
 
-}
-@media (max-width:768px){
-.temporadas1,
-.temporadas2,
-.temporadas3,
-.temporadas4{
-border-radius:12px;
-margin-bottom:15px;
-}
 }
