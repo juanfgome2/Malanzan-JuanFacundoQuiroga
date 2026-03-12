@@ -1036,7 +1036,7 @@ position: relative;
   padding-left: 585px;
 }
 .river{
-  color: white;
+  color: #f0ff82fa;
   font-size: 30px;
   text-decoration: none;
 }
@@ -1208,7 +1208,7 @@ button[type="submit"]:hover {
   font-family: 'Merriweather', serif;
   display: inline-block; /* Asegura que se comporte como inline para centrado */
   font-size: 30px;
-  color: white;
+  color: #25fd00;
   text-decoration: none;
   filter: drop-shadow(0 0 12px hwb(0 17% 78%));
   text-shadow: 0 0 12px hwb(0 49% 36%);
@@ -1587,7 +1587,7 @@ margin-left: 25px;
   color: #fff; /* Color del texto del footer */
 }
 .river{
-  color: white;
+  color: #f0ff82fa;
   font-size: 30px;
   text-decoration: none;
 }
@@ -1910,7 +1910,7 @@ button[type="submit"] {
 
 #visitanos{
   margin: 0%;
-  color: white;
+  color: #ff0000;
   text-align: center;
   padding: 20px;
   font-family: sans-serif;
@@ -2534,6 +2534,7 @@ margin-top:8px;
 }
 .paz{
   color:#09ff00;
+  background-color: #243763;
 }
 .temporadas1{
   text-shadow: 0 0 12px hwb(0 17% 78%);
@@ -2602,7 +2603,7 @@ opacity:1;
 padding:15px;
 }
 .temporadas4:hover{
-background-color:hwb(86 9% 52%);
+background-color:hwb(64 3% 7%);
 color:white;
 }
 .temporadas4 p{
