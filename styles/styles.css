@@ -2604,7 +2604,7 @@ opacity:1;
 text-shadow:0 0 12px hwb(0 17% 78%);
 min-height:100px;
 transition:0.4s;
-padding: 3px;
+padding: 2px;
 
 border-radius:12px;
 margin-bottom:15px;
@@ -2658,6 +2658,9 @@ transition:0.4s;
 
 .temporada:hover p{
 opacity:1;
+}
+.paz{
+  font-size: 12px;
 }
 
    }
