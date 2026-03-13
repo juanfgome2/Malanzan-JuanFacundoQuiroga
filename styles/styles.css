@@ -2603,11 +2603,12 @@ opacity:1;
 .temporada{
 min-height:auto;
 padding:15px;
+font-size:7px;
 }
 
 .temporada p{
 opacity:1;
-font-size:14px !important;
+
 line-height:1.5;
 }
 
