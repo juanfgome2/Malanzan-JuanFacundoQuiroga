@@ -2601,20 +2601,61 @@ opacity:1;
 @media (max-width:1000px){
 
 .temporada{
-min-height:auto;
+text-shadow:0 0 12px hwb(0 17% 78%);
+min-height:100px;
+transition:0.4s;
 padding:15px;
-font-size:8px;
+border-radius:12px;
+margin-bottom:15px;
 }
+
+/* COLORES DE CADA TEMPORADA */
+
+.temp1{
+background-color:hwb(0 88% 9% / 0.326);
+}
+
+.temp1:hover{
+background-color:hwb(60 24% 75%);
+color:white;
+}
+
+.temp2{
+background-color:hwb(39 6% 7% / 0.315);
+}
+
+.temp2:hover{
+background-color:hwb(39 6% 7%);
+color:white;
+}
+
+.temp3{
+background-color:hwb(108 5% 23% / 0.326);
+}
+
+.temp3:hover{
+background-color:hwb(119 1% 81%);
+color:white;
+}
+
+.temp4{
+background-color:hwb(66 4% 7% / 0.326);
+}
+
+.temp4:hover{
+background-color:hwb(64 3% 7%);
+color:white;
+}
+
+/* TEXTO OCULTO */
 
 .temporada p{
+opacity:0;
+transition:0.4s;
+}
+
+.temporada:hover p{
 opacity:1;
-
-line-height:1.5;
 }
 
-.temporada:hover{
-background-color:inherit;
-color:inherit;
-}
-
-}
+   }
