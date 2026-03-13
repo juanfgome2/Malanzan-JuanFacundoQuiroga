@@ -2604,7 +2604,7 @@ opacity:1;
 text-shadow:0 0 12px hwb(0 17% 78%);
 min-height:100px;
 transition:0.4s;
-padding:1px;
+padding: 4px;
 border-radius:12px;
 margin-bottom:15px;
 font-size: 11px;
