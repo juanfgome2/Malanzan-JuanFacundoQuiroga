@@ -1273,7 +1273,7 @@ button[type="submit"]:hover {
 
 .nav6 {
   height: 50px;
-  width: 270px;
+  width: 420px;
   padding-left: 18px;
   padding-bottom: 0px;
 }
@@ -1352,7 +1352,12 @@ button[type="submit"]:hover {
       width: 700px;
       padding-left: 18px;
   }
-  
+  .nav6 {
+    height: 50px;
+      width: 700px;
+      padding-left: 18px;
+      padding-bottom: 30px;
+  }
   
   .nav1 {
     height: 50px;
