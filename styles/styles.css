@@ -770,6 +770,11 @@ position: relative;
   background-color: #333; /* Color de fondo del footer */
   color: #fff; /* Color del texto del footer */
 }
+.footer-containerespecial {
+  height: 380px;
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+}
 .footer-container23{
   padding-right: 0px;
   height: 350px;
@@ -1582,6 +1587,11 @@ margin-left: 25px;
 
 }
 .footer-container {
+  height: 320px;
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+}
+.footer-containerespecial {
   height: 320px;
   background-color: #333; /* Color de fondo del footer */
   color: #fff; /* Color del texto del footer */
