@@ -1271,7 +1271,12 @@ button[type="submit"]:hover {
   margin-right: auto; /* Centra en el contenedor */
 }
 
-
+.nav6 {
+  height: 50px;
+  width: 270px;
+  padding-left: 18px;
+  padding-bottom: 0px;
+}
 .nav1 {
   height: 50px;
   width: 270px;
