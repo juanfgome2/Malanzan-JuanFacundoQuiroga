@@ -775,6 +775,11 @@ position: relative;
   background-color: #333; /* Color de fondo del footer */
   color: #fff; /* Color del texto del footer */
 }
+.footer-containerespecial1 {
+  height: 380px;
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+}
 .footer-container23{
   padding-right: 0px;
   height: 350px;
@@ -833,11 +838,7 @@ position: relative;
   display: flex;
   justify-content: space-between,center; /* Distribuir los iconos uniformemente */
 }
-.footer-icons27 {
-  height: 200px;
-  display: flex;
-  justify-content: space-between,center; /* Distribuir los iconos uniformemente */
-}
+
 .footer-icons28 {
   height: 200px;
   display: flex;
@@ -851,6 +852,13 @@ position: relative;
   margin-top: 20px; /* Espacio superior entre los iconos y el contenido superior */
 }
 .footer-iconsst {
+  height: 100px;
+  display: flex; /* Mostrar los iconos en línea */
+  justify-content: space-between; /* Distribuir los iconos uniformemente */
+ /* max-width: 300px; /* Ancho máximo para la distribución de los iconos */
+  margin-top: 20px; /* Espacio superior entre los iconos y el contenido superior */
+}
+.footer-iconsst1 {
   height: 100px;
   display: flex; /* Mostrar los iconos en línea */
   justify-content: space-between; /* Distribuir los iconos uniformemente */
@@ -1616,6 +1624,11 @@ margin-left: 25px;
   background-color: #333; /* Color de fondo del footer */
   color: #fff; /* Color del texto del footer */
 }
+.footer-containerespecial1 {
+  height: 220px;
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+}
 .river{
   color: #f0ff82fa;
   font-size: 30px;
@@ -1632,17 +1645,7 @@ padding-left: 33px;
 margin-left: 25px;
 
 }
-.footer-icons27 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-width: 300px;
-padding-left: 40px;
 
-margin-left: 25px;
-
-}
 .footer-icons28 {
   display: flex;
   justify-content: center;
@@ -1670,6 +1673,19 @@ margin-left: 25px;
 
 }
 .footer-iconsst {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  width: 280px;
+  padding-left: 100px;
+
+  margin-left: 10px;
+  height: 100px;
+  margin-top: 30px;
+
+}
+.footer-iconsst1 {
     display: flex;
     justify-content: center;
     align-items: center;
