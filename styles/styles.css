@@ -2400,6 +2400,15 @@ body {
   width: 100%; /* Ancho completo */
 }
 
+.card-bodyf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia contenido dentro de la tarjeta */
+  flex-grow: 1; /* Asegura que las descripciones se ajusten a la altura disponible */
+  padding: 20px;
+  height: 232px;
+  margin-bottom: 180px;
+}
 .card-body {
   display: flex;
   flex-direction: column;
