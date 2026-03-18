@@ -2403,11 +2403,9 @@ body {
 .card-bodyf {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Espacia contenido dentro de la tarjeta */
-  flex-grow: 1; /* Asegura que las descripciones se ajusten a la altura disponible */
+  justify-content: space-between;
   padding: 20px;
-  height: 232px;
-  margin-bottom: 180px;
+  background-color: hwb(0 80% 0%);
 }
 .card-body {
   display: flex;
