@@ -1307,7 +1307,7 @@ button[type="submit"]:hover {
 .nav1030 {
   height: 50px;
   width: 400px;
-  padding-left: 18px;
+ /* padding-left: 18px;*/
   padding-bottom: 0px;
 }
 .nav1040 {
