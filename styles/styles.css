@@ -2429,7 +2429,7 @@ body {
 .card-text {
    flex-grow: 1; /* Hace que todas las descripciones se expandan uniformemente */
   text-align: justify; /* Justifica el texto */
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   color: #333;
   
 }
