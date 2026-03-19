@@ -67,6 +67,70 @@
 .mil{
   color: #000000;
 }
+.loco{
+    background:#f4f6f7;
+    padding:60px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loca{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.aceite{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.aceite h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.aceite p{
+    max-width:800px;
+    margin:auto;
+    color:#555;
+}
+
+.madera img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:40px;
+}
+
+.hierro{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.ojota{
+    flex:1;
+}
+
+.ojota img{
+    width:100%;
+    border-radius:10px;
+}
+
+.zapa{
+    flex:2;
+}
+
+.piel{
+    font-size:26px;
+    margin-bottom:10px;
+}
 
 .luz{
     font-size:24px;
