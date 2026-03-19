@@ -958,6 +958,11 @@ position: relative;
   display: flex;
   justify-content: space-between,center; /* Distribuir los iconos uniformemente */
 }
+.footer-icons223 {
+  height: 200px;
+  display: flex;
+  justify-content: space-between,center; /* Distribuir los iconos uniformemente */
+}
 .footer-icons23 {
   height: 200px;
   display: flex;
@@ -1726,6 +1731,17 @@ button[type="submit"]:hover {
   padding-left: 33px;
 
   margin-left: 25px;
+
+}
+.footer-icons223 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  width: 300px;
+  padding-left: 33px;
+
+   /*margin-left: 25px;*/
 
 }
 .card.mb-3 {
