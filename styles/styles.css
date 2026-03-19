@@ -333,12 +333,14 @@
 
   }
   .piel {
-    color:#dedfca;
+    color:#323503;
     font-style: italic;
     margin-left: 10px;
     margin-bottom: 40px
   }
-  
+  .mkl{
+    color: black;
+  }
   .estancia {
     color:#dedfca;
     font-style: italic;
