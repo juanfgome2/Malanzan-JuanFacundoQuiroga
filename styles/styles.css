@@ -1738,10 +1738,10 @@ button[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     
-  width: 310px;
+  width: 300px;
   padding-left: 33px;
 
-   /*margin-left: 25px;*/
+   margin-left: 25px;
 
 }
 .card.mb-3 {
