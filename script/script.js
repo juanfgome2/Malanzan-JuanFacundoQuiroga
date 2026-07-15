@@ -23,9 +23,33 @@ function nextSlide() {
 }
 
 function updateSlide(slideWidth) {
+  const carousel = document.getElementById('carousel1');
+  if (!carousel) return;
   const newTransformValue = -slideIndex * slideWidth;
-  document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}px)`;
+  carousel.style.transform = `translateX(${newTransformValue}px)`;
+  updateMainCarouselDots();
 }
+
+function updateMainCarouselDots() {
+  document.querySelectorAll('.main-carousel .carousel-dots button').forEach((dot, index) => {
+    const active = index === slideIndex;
+    dot.classList.toggle('is-active', active);
+    dot.setAttribute('aria-current', active ? 'true' : 'false');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.main-carousel .carousel-dots button').forEach((dot) => {
+    dot.addEventListener('click', function () {
+      const carousel = document.getElementById('carousel1');
+      const image = carousel && carousel.querySelector('img');
+      if (!image) return;
+      slideIndex = Number(this.dataset.slide);
+      updateSlide(image.clientWidth);
+    });
+  });
+  updateMainCarouselDots();
+});
 
 let slideIndex2 = 0;
 
