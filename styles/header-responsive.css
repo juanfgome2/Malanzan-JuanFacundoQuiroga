@@ -1,4 +1,5 @@
 @import url("mobile-option3.css");
+@import url("internal-pages.css");
 
 /* Ajuste aislado del encabezado. No afecta al contenido ni a los dropdowns. */
 .site-header {

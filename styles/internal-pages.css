@@ -1,0 +1,771 @@
+:root {
+  --internal-green-dark: #123C3A;
+  --internal-green: #4F9D3A;
+  --internal-green-soft: #DFF3D8;
+  --internal-gold: #F2B632;
+  --internal-terracotta: #C96F3B;
+  --internal-cream: #FFF8E8;
+  --internal-sand: #F1E3C6;
+  --internal-blue: #24475A;
+  --internal-ink: #243238;
+  --internal-white: #FFFFFF;
+  --internal-shadow: 0 12px 30px rgba(18, 60, 58, .16);
+  --internal-radius: 20px;
+  --internal-width: 1200px;
+}
+
+/* Base exclusiva de páginas internas */
+body.internal-page {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--internal-ink);
+  font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+  background: linear-gradient(180deg, var(--internal-cream), #F8F1E4 58%, var(--internal-sand));
+}
+
+body.internal-page *,
+body.internal-page *::before,
+body.internal-page *::after {
+  box-sizing: border-box;
+}
+
+body.internal-page img,
+body.internal-page iframe,
+body.internal-page video {
+  max-width: 100%;
+}
+
+body.internal-page main {
+  width: min(calc(100% - 32px), var(--internal-width)) !important;
+  margin: 0 auto !important;
+  padding: clamp(28px, 5vw, 64px) 0 !important;
+}
+
+body.internal-page main > :first-child {
+  margin-top: 0 !important;
+}
+
+body.internal-page section,
+body.internal-page article {
+  min-width: 0;
+}
+
+body.internal-page h1,
+body.internal-page h2,
+body.internal-page h3,
+body.internal-page h4,
+body.internal-page h5,
+body.internal-page h6 {
+  color: var(--internal-green-dark) !important;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+body.internal-page h1 {
+  margin: 0 0 14px !important;
+  font-size: clamp(2rem, 4vw, 3.5rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em;
+}
+
+body.internal-page h2 {
+  font-size: clamp(1.45rem, 2.7vw, 2.2rem) !important;
+}
+
+body.internal-page h3,
+body.internal-page h5 {
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem) !important;
+}
+
+body.internal-page p {
+  color: var(--internal-ink) !important;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+  line-height: 1.58 !important;
+  text-shadow: none !important;
+}
+
+body.internal-page main a:not(.map-link):not([class*="inline-flex"]) {
+  color: var(--internal-green-dark);
+  text-decoration-color: rgba(79, 157, 58, .45);
+}
+
+body.internal-page main a:hover,
+body.internal-page main a:focus-visible {
+  color: var(--internal-green);
+}
+
+/* Portadas y cabeceras de contenido */
+body.internal-page .header-containern,
+body.internal-page main > header,
+body.internal-page main > section:first-child > .container:first-child,
+body.internal-page main > section:first-child .space-y-2 {
+  text-align: center;
+}
+
+body.internal-page .header-containern,
+body.internal-page main > header {
+  width: min(100%, 900px);
+  margin: 0 auto clamp(28px, 5vw, 52px) !important;
+  padding: clamp(24px, 4vw, 42px) !important;
+  background: linear-gradient(135deg, rgba(223, 243, 216, .9), rgba(255, 248, 232, .94));
+  border: 1px solid rgba(79, 157, 58, .18);
+  border-radius: 24px;
+  box-shadow: 0 10px 26px rgba(18, 60, 58, .12);
+}
+
+body.internal-page .header-containern p,
+body.internal-page main > header p {
+  max-width: 720px;
+  margin: 7px auto 0 !important;
+  color: #526268 !important;
+  font-size: clamp(.96rem, 1.5vw, 1.1rem) !important;
+}
+
+/* Sistema común de tarjetas */
+body.internal-page .card-group,
+body.internal-page .row.row-cols-1,
+body.internal-page .grid[class*="grid-cols"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 28px) !important;
+  width: 100%;
+  margin: 0 0 clamp(28px, 5vw, 54px) !important;
+}
+
+body.internal-page .card-group > *,
+body.internal-page .row.row-cols-1 > *,
+body.internal-page .grid[class*="grid-cols"] > * {
+  min-width: 0;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+body.internal-page .card,
+body.internal-page .rounded-lg.border,
+body.internal-page .rounded-xl.border,
+body.internal-page [data-v0-t="card"],
+body.internal-page .sponsor,
+body.internal-page .pera,
+body.internal-page .hierro,
+body.internal-page .clima-jfq {
+  height: 100%;
+  overflow: hidden;
+  color: var(--internal-ink) !important;
+  background: var(--internal-white) !important;
+  border: 1px solid rgba(36, 71, 90, .12) !important;
+  border-radius: var(--internal-radius) !important;
+  box-shadow: var(--internal-shadow) !important;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body.internal-page .card:hover,
+body.internal-page [data-v0-t="card"]:hover,
+body.internal-page .sponsor:hover,
+body.internal-page .pera:hover,
+body.internal-page .hierro:hover,
+body.internal-page .clima-jfq:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(18, 60, 58, .21) !important;
+}
+
+body.internal-page .card-img-top,
+body.internal-page .card > img,
+body.internal-page .sponsor img,
+body.internal-page .pera img,
+body.internal-page .hierro img,
+body.internal-page img.ranu {
+  display: block;
+  width: 100% !important;
+  height: clamp(210px, 22vw, 280px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  filter: none !important;
+}
+
+body.internal-page .card-body,
+body.internal-page .sponsor,
+body.internal-page .pera,
+body.internal-page .hierro,
+body.internal-page .clima-jfq > div {
+  padding: 20px !important;
+  color: var(--internal-ink) !important;
+  background: var(--internal-white) !important;
+  opacity: 1 !important;
+}
+
+body.internal-page .card-header,
+body.internal-page .sponsor > h3,
+body.internal-page .piel {
+  height: auto !important;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  color: var(--internal-green-dark) !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: 0 !important;
+  text-shadow: none !important;
+}
+
+body.internal-page .card-text,
+body.internal-page .sponsor p,
+body.internal-page .pera p,
+body.internal-page .hierro p {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #43545A !important;
+  background: transparent !important;
+  text-align: left !important;
+}
+
+/* Naturaleza: portada y catálogo visual de atractivos */
+body.naturaleza-page .naturaleza-content {
+  background: transparent;
+}
+
+body.naturaleza-page .header-containern {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(242, 182, 50, .2), transparent 30%),
+    linear-gradient(135deg, rgba(223, 243, 216, .96), rgba(255, 248, 232, .94));
+}
+
+body.naturaleza-page .header-containern::before {
+  position: absolute;
+  top: -42px;
+  left: -34px;
+  width: 130px;
+  height: 130px;
+  content: "";
+  background: rgba(79, 157, 58, .1);
+  border-radius: 50%;
+}
+
+body.naturaleza-page .header-containern > * {
+  position: relative;
+}
+
+body.naturaleza-page .naturaleza-grid {
+  align-items: stretch;
+}
+
+body.naturaleza-page .naturaleza-grid .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-color: rgba(79, 157, 58, .2) !important;
+}
+
+body.naturaleza-page .naturaleza-grid .card-img-top {
+  height: clamp(210px, 20vw, 260px) !important;
+  transition: transform .35s ease;
+}
+
+body.naturaleza-page .naturaleza-grid .card:hover .card-img-top {
+  transform: scale(1.035);
+}
+
+body.naturaleza-page .naturaleza-image-label {
+  position: absolute;
+  top: clamp(162px, calc(20vw - 48px), 212px);
+  left: 16px;
+  z-index: 2;
+  max-width: calc(100% - 32px);
+  padding: 7px 12px;
+  overflow: hidden;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(18, 60, 58, .88);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(5px);
+}
+
+body.naturaleza-page .naturaleza-grid .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px !important;
+}
+
+body.naturaleza-page .naturaleza-grid .card-header {
+  margin-bottom: 12px !important;
+  font-size: clamp(1.18rem, 1.8vw, 1.42rem) !important;
+  font-weight: 800;
+}
+
+body.naturaleza-page .naturaleza-grid .card-header a {
+  color: var(--internal-green-dark) !important;
+  text-decoration: none;
+}
+
+body.naturaleza-page .naturaleza-grid .card-header a::after {
+  display: inline-block;
+  margin-left: 7px;
+  color: var(--internal-green);
+  content: "\2192";
+  transition: transform .2s ease;
+}
+
+body.naturaleza-page .naturaleza-grid .card:hover .card-header a::after {
+  transform: translateX(4px);
+}
+
+body.naturaleza-page .naturaleza-grid .card-text {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.58;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+body.naturaleza-page .site-footer,
+body.naturaleza-page .site-footer h2,
+body.naturaleza-page .site-footer h3,
+body.naturaleza-page .site-footer p,
+body.naturaleza-page .site-footer a,
+body.naturaleza-page .site-footer span {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+@media (max-width: 767px) {
+  body.naturaleza-page .naturaleza-grid .card-img-top {
+    height: clamp(190px, 58vw, 245px) !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-body {
+    padding: 18px !important;
+  }
+
+  body.naturaleza-page .naturaleza-image-label {
+    top: clamp(142px, calc(58vw - 48px), 197px);
+    left: 14px;
+    max-width: calc(100% - 28px);
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-text {
+    display: block;
+    overflow: visible;
+    font-size: clamp(.92rem, 4vw, 1rem);
+    line-height: 1.55;
+    -webkit-line-clamp: unset;
+  }
+
+  body.naturaleza-page .main-container {
+    width: min(calc(100% - 20px), 560px) !important;
+    padding-top: 20px !important;
+  }
+
+  body.naturaleza-page .header-containern {
+    width: 100%;
+    padding: 22px 16px !important;
+  }
+
+  body.naturaleza-page .header-containern p {
+    max-width: 34ch;
+  }
+
+  body.naturaleza-page .naturaleza-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card {
+    min-width: 0;
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-header {
+    font-size: clamp(1.16rem, 5.5vw, 1.4rem) !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(18, 60, 58, .22) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  body.naturaleza-page .main-container {
+    width: calc(100% - 16px) !important;
+  }
+
+  body.naturaleza-page .header-containern {
+    padding: 20px 13px !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid {
+    gap: 14px !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-body {
+    padding: 16px !important;
+  }
+
+  body.naturaleza-page .naturaleza-image-label {
+    left: 12px;
+    max-width: calc(100% - 24px);
+    padding: 6px 10px;
+    font-size: .82rem;
+  }
+}
+
+/* Botones y llamadas a la acción */
+body.internal-page main button,
+body.internal-page main a.inline-flex,
+body.internal-page .sponsor button,
+body.internal-page .pera button,
+body.internal-page .hierro button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  width: auto !important;
+  margin: 14px auto 0 !important;
+  padding: 10px 18px !important;
+  color: var(--internal-white) !important;
+  font: 700 .88rem/1.2 "Segoe UI", Inter, system-ui, sans-serif;
+  text-decoration: none !important;
+  background: var(--internal-green) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 6px 14px rgba(18, 60, 58, .18);
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+body.internal-page main button p {
+  margin: 0 !important;
+  color: inherit !important;
+  line-height: 1 !important;
+}
+
+body.internal-page main button:hover,
+body.internal-page main a.inline-flex:hover {
+  color: var(--internal-white) !important;
+  background: var(--internal-green-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(18, 60, 58, .23);
+}
+
+/* Páginas de temporada y bloques editoriales */
+body.internal-page .container {
+  width: min(100%, var(--internal-width)) !important;
+  max-width: var(--internal-width) !important;
+  margin-inline: auto !important;
+  padding-inline: clamp(16px, 3vw, 28px) !important;
+}
+
+body.internal-page section[class*="py-"] {
+  margin: 0 0 34px !important;
+  padding-block: clamp(28px, 5vw, 58px) !important;
+  background: rgba(255, 255, 255, .56) !important;
+  border-radius: 24px;
+}
+
+body.internal-page .grid[class*="lg:grid-cols-[1fr_"] {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 42%) !important;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px) !important;
+}
+
+body.internal-page .grid[class*="lg:grid-cols-3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body.internal-page .grid[class*="lg:grid-cols-[1fr_"] > img,
+body.internal-page section[class*="py-"] > img {
+  width: 100% !important;
+  height: clamp(280px, 34vw, 470px) !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+  box-shadow: var(--internal-shadow);
+}
+
+body.internal-page .clima-jfq {
+  padding: 22px !important;
+}
+
+/* Galerías antiguas convertidas en mosaico moderno */
+body.internal-page .gallery-title {
+  grid-column: 1 / -1;
+  margin: 0 0 8px !important;
+  text-align: center;
+}
+
+body.internal-page .gallery_product {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: var(--internal-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(18, 60, 58, .13);
+}
+
+body.internal-page .gallery_product img {
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+body.internal-page .row:has(.gallery_product) {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.internal-page .row:has(.gallery_product) > .gallery {
+  grid-column: 1 / -1;
+  width: 100% !important;
+}
+
+/* Imágenes y contenido de detalle */
+body.internal-page main > img,
+body.internal-page main figure img,
+body.internal-page .image-container img,
+body.internal-page .contenedor-imagen img {
+  display: block;
+  width: min(100%, 900px) !important;
+  max-height: 600px;
+  margin: 0 auto 26px !important;
+  object-fit: cover;
+  border-radius: 20px !important;
+  box-shadow: var(--internal-shadow);
+}
+
+body.internal-page iframe {
+  width: 100% !important;
+  min-height: 340px;
+  border: 0 !important;
+  border-radius: 20px !important;
+  box-shadow: var(--internal-shadow);
+}
+
+/* Neutraliza fondos y alturas inline antiguos dentro de tarjetas */
+body.internal-page .card [style*="background-color"],
+body.internal-page .sponsor [style*="background-color"],
+body.internal-page .pera [style*="background-color"],
+body.internal-page .hierro [style*="background-color"] {
+  color: inherit !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+body.internal-page .card [style*="height:"],
+body.internal-page .sponsor [style*="height:"],
+body.internal-page .pera [style*="height:"],
+body.internal-page .hierro [style*="height:"] {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* Responsive compartido */
+@media (max-width: 1024px) {
+  body.internal-page .card-group,
+  body.internal-page .row.row-cols-1,
+  body.internal-page .grid[class*="grid-cols"],
+  body.internal-page .row:has(.gallery_product) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.internal-page .grid[class*="lg:grid-cols-[1fr_"] {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 42%) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.internal-page main {
+    width: min(calc(100% - 20px), var(--internal-width)) !important;
+    padding-block: 22px 36px !important;
+  }
+
+  body.internal-page .header-containern,
+  body.internal-page main > header {
+    margin-bottom: 22px !important;
+    padding: 22px 16px !important;
+    border-radius: 18px;
+  }
+
+  body.internal-page h1 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem) !important;
+  }
+
+  body.internal-page h2 {
+    font-size: clamp(1.3rem, 6vw, 1.75rem) !important;
+  }
+
+  body.internal-page .card-group,
+  body.internal-page .row.row-cols-1,
+  body.internal-page .grid[class*="grid-cols"],
+  body.internal-page .grid[class*="lg:grid-cols-[1fr_"],
+  body.internal-page .grid[class*="lg:grid-cols-3"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 28px !important;
+  }
+
+  body.internal-page .card-img-top,
+  body.internal-page .card > img,
+  body.internal-page .sponsor img,
+  body.internal-page .pera img,
+  body.internal-page .hierro img,
+  body.internal-page img.ranu {
+    height: clamp(190px, 58vw, 270px) !important;
+  }
+
+  body.internal-page .card-body,
+  body.internal-page .sponsor,
+  body.internal-page .pera,
+  body.internal-page .hierro,
+  body.internal-page .clima-jfq > div {
+    padding: 17px !important;
+  }
+
+  body.internal-page section[class*="py-"] {
+    padding-block: 22px !important;
+    border-radius: 18px;
+  }
+
+  body.internal-page .grid[class*="lg:grid-cols-[1fr_"] > img {
+    height: clamp(220px, 70vw, 330px) !important;
+  }
+
+  body.internal-page .row:has(.gallery_product) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  body.internal-page .site-footer {
+    margin-top: 26px;
+  }
+}
+
+@media (max-width: 430px) {
+  body.internal-page .row:has(.gallery_product) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Naturaleza móvil: conserva la tarjeta completa, no solo la imagen. */
+@media (max-width: 767px) {
+  body.naturaleza-page .naturaleza-grid {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    grid-auto-rows: auto !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card {
+    display: flex !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: none !important;
+    flex-direction: column !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-img-top {
+    display: block !important;
+    width: 100% !important;
+    height: clamp(180px, 56vw, 220px) !important;
+    flex: 0 0 auto !important;
+    object-fit: cover !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-body {
+    position: relative !important;
+    display: flex !important;
+    visibility: visible !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    padding: 18px !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-header,
+  body.naturaleza-page .naturaleza-grid .card-text {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    white-space: normal !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  body.naturaleza-page .naturaleza-grid .card-text {
+    margin: 0 !important;
+    color: #43545a !important;
+    font-size: clamp(.92rem, 4vw, 1rem) !important;
+    line-height: 1.55 !important;
+  }
+
+  body.naturaleza-page .naturaleza-image-label {
+    top: clamp(132px, calc(56vw - 48px), 172px) !important;
+  }
+}
+
+/* Contraste uniforme del footer en todas las páginas internas. */
+body.internal-page .site-footer {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+body.internal-page .site-footer *,
+body.internal-page .site-footer *::before,
+body.internal-page .site-footer *::after {
+  opacity: 1 !important;
+}
+
+body.internal-page .site-footer .site-footer-info h2 {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+body.internal-page .site-footer .site-footer-info h3 {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+body.internal-page .site-footer .site-footer-info p,
+body.internal-page .site-footer .site-footer-copy {
+  color: rgba(255, 255, 255, .88) !important;
+}
+
+body.internal-page .site-footer a,
+body.internal-page .site-footer a:link,
+body.internal-page .site-footer a:visited,
+body.internal-page .site-footer a:hover,
+body.internal-page .site-footer a:focus-visible,
+body.internal-page .site-footer a:active,
+body.internal-page .site-footer .site-footer-social span {
+  color: #fff !important;
+}
